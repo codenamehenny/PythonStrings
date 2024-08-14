@@ -13,9 +13,9 @@ def count_characters(first_name, last_name):
     last_name_count = len(last_name)
     if first_name_count < 2:
         return print("\nError, first name must be more than 2 characters long. Please try again")
-    if last_name_count < 2:
+    elif last_name_count < 2:
         return print("\nError, last name must be more than 2 characters long. Please try again")
-    if first_name_count and last_name_count > 2:
+    elif first_name_count and last_name_count > 2:
         return print(f"\nYour first name has {first_name_count} characters and your last name has {last_name_count} characters.")
 
 count_characters(first_name, last_name)
