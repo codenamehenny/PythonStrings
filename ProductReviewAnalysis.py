@@ -61,7 +61,6 @@ finding_review_tally(reviews, positive_words, negative_words)
 
 def summarize_review(reviews):
     max_length =  30
-    #for review in reviews:
     if len(review) <= max_length: #displays full review if under 30 characters
         return print(review)
     elif len(review) > max_length: 
