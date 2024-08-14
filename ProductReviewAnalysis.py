@@ -50,7 +50,29 @@ def finding_review_tally(reviews, positive_words, negative_words):
             if negative.capitalize() or negative.upper() in review:
                 negative_count += review.count(negative)
             negative_count += review.count(negative)
-    return print(f"\nPositive word count: {positive_count} \nNegative word count: {negative_count} ")
+    return print(f"\nPositive word count: {positive_count} \nNegative word count: {negative_count}\n")
 
 # calls tally function
 finding_review_tally(reviews, positive_words, negative_words)
+
+#Task 3: Review Summary
+#Implement a script that takes the first 30 characters of a review and appends "…" to create a summary. 
+#Ensure that the summary does not cut off in the middle of a word.
+
+def summarize_review(reviews):
+    max_length =  30
+    #for review in reviews:
+    if len(review) <= max_length: #displays full review if under 30 characters
+        return print(review)
+    elif len(review) > max_length: 
+        if review[max_length] != " ":
+            space = review.find(" ", max_length) #finds where the word ends after 30 mark
+            short_review = review[max_length:space] #characters between 30 mark and next space
+            final_review = review[:max_length] + short_review + "..." #adds remaining words to the 30 mark and puts "..." at the end
+            return print(final_review)
+        
+# loops through each review and calls the summary function
+for review in reviews:
+    summaries = summarize_review(reviews)
+
+
